@@ -1,4 +1,4 @@
-# fly.toml file generated for week2-database-nkndi on 2023-01-23T17:21:06Z
+# fly.toml file generated for week2-database-nkndi on 2023-01-24T12:19:48Z
 
 app = "week2-database-nkndi"
 kill_signal = "SIGINT"

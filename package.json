@@ -6,20 +6,16 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {
-    "test": "node ./tests/1.test.js",
-    "dev": "nodemon src/index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fac26/week2-database-nkndi.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fac26/week2-database-nkndi/issues"
+  "scripts": {
+    "test": "node ./tests/1.test.js",
+    "start": "node src/index.js",
+    "dev": "DB_FILE=db.sqlite nodemon src/index.js",
+    "seed": "DB_FILE=db.sqlite node ./database/seed.js"
   },
-  "homepage": "https://github.com/fac26/week2-database-nkndi#readme",
   "dependencies": {
     "better-sqlite3": "^8.0.1",
     "express": "^4.18.2"

@@ -8,6 +8,6 @@ id, name FROM genres`
 function listGenres(){
     return selectall_Genres.all();
 }
-
+console.log(listGenres())
 module.exports = {listGenres}
 
