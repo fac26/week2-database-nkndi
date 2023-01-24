@@ -1,3 +1,4 @@
+PRAGMA foreign_keys = OFF;
 BEGIN;
 
 INSERT INTO authors VALUES
@@ -28,3 +29,5 @@ INSERT INTO books (name, author_id, year, genres_id) VALUES
   ('Homage to Catalonia', 4, 1938, 5)
 
 ON CONFLICT DO NOTHING;
+COMMIT;
+PRAGMA foreign_keys = ON;
