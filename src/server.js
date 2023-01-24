@@ -1,12 +1,13 @@
 const express = require('express');
 const {addBook }= require('../routes/addBook');
+const {books } = require('../routes/books');
 
-//const books = require('../routes/books');
+
 
 const server = express();
 
-server.get('/', addBook);
-// server.get('/add-book', books.render);
+server.get('/', books);
+server.get('/add-book', addBook);
 
 // server.post('/', books.sort);
 // server.post('/add-book', addBook.submit);
