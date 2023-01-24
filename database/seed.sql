@@ -17,7 +17,7 @@ INSERT INTO genres VALUES
 
 ON CONFLICT DO NOTHING;
 
-INSERT INTO cohorts (book.names, author_id, year, genres_id) VALUES
+INSERT INTO books (name, author_id, year, genres_id) VALUES
   ('The Lord of the Rings', 1, 1955, 1),
   ('The Hobbit', 1,  1937, 1),
   ('It', 2, 1986, 2),
