@@ -1,8 +1,13 @@
 const express = require('express');
-const route1 = require('../routes/route1.js');
+const addBook = require('./routes/addBook');
+const books = require('./routes/books');
 
 const server = express();
 
-server.get('/', route1.get);
+server.get('/', addBook.form);
+server.get('/add-book', books.render);
+
+server.post('/', books.sort);
+server.post('/add-book', addBook.submit);
 
 module.exports = server;
