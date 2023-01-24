@@ -9,12 +9,6 @@ INSERT INTO authors VALUES
 ON CONFLICT DO NOTHING;
 
 INSERT INTO genres VALUES
-(1, 'J.R.R Tolkien'),
-(2, 'Stephen King'),
-(3, 'Arthur C. Clarke'),
-(4, 'George Orwell')
-
-ON CONFLICT DO NOTHING;
 (1, 'Fantasy'),
 (2, 'Horror'),
 (3, 'Science Fiction'),
