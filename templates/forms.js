@@ -7,3 +7,27 @@
 //page on discord
 
 //not writing functions here, just templates 
+
+function addbookform({genres, errors={}}) {
+    const options = genres.map((gen) => `<option value="${gen.id}">
+    ${gen.name}</option>`); 
+    const formhtml = `<h1>Add a book</h1>
+    <form method="POST">
+    <p><label for="name">Book name:</label>
+    <input name="name" id="name">
+    ${validate(errors.name)}</p>
+    <p><label for="author">Author name:</label>
+    <input name="author" id="author">
+    ${validate(errors.author)}</p>
+    <p><label for="year">Year of release:</label>
+    <input name="year" id="year">
+    ${validate(errors.year)}</p>
+    <p><label>Genre:</label>
+    <select name="genres_id">${options.join("")}</select></p>
+    <button>Add &plus;</button>
+    </form>
+    `;
+    return formhtml; 
+}
+
+module.exports = { addbookform }
