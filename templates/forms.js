@@ -8,7 +8,7 @@
 
 //not writing functions here, just templates 
 
-function addbookform({genres, errors={}}) {
+function addbookform(genres, errors={}) {
     const options = genres.map((gen) => `<option value="${gen.id}">
     ${gen.name}</option>`); 
     const formhtml = `<h1>Add a book</h1>
