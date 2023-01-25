@@ -1,13 +1,13 @@
-const db = require("../database/database.js")
+const db = require('../database/database.js');
 
-const selectall_Genres = db.prepare(/*sql*/
-`SELECT
+const selectall_Genres = db.prepare(
+	/*sql*/
+	`SELECT
 id, name FROM genres`
-)
+);
 
-function listGenres(){
-    return selectall_Genres.all();
+function listGenres() {
+	return selectall_Genres.all();
 }
-console.log(listGenres())
-module.exports = {listGenres}
-
+console.log(listGenres());
+module.exports = { listGenres };
