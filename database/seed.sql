@@ -5,7 +5,8 @@ INSERT INTO authors VALUES
 (1, 'J.R.R Tolkien'),
 (2, 'Stephen King'),
 (3, 'Arthur C. Clarke'),
-(4, 'George Orwell')
+(4, 'George Orwell'),
+(5, 'Unknown')
 
 ON CONFLICT DO NOTHING;
 
