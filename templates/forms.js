@@ -23,7 +23,7 @@ function addbookform(genres, errors={}) {
     <input name="year" id="year">
     ${validate(errors.year)}</p>
     <p><label>Genre:</label>
-    <select name="genres_id">${options.join("")}</select></p>
+    <select name="genres_id">${options.join(" ")}</select></p>
     <button>Add &plus;</button>
     </form>
     `;

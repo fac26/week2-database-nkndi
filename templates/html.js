@@ -11,7 +11,7 @@ function htmlTemplate(title, content, linkname, linkpath) {
         <title>${title}</title>
     </head>
     <body>
-        <a href="${linkpath}">${linkname}</a>
+        <a class="link" href="${linkpath}">${linkname}</a>
         <main>
             ${content}
         </main>
