@@ -6,11 +6,16 @@ const {handleAddBook} = require('../routes/addBook');
 const bodyParser = express.urlencoded();
 
 const server = express();
+const staticHandler = express.static("public");
+
+server.use(staticHandler);
+
 
 server.get('/', books);
 server.get('/add-book', addBook);
 server.post('/add-book',bodyParser, handleAddBook);
 // server.post('/', books.sort);
+
 
 
 module.exports = server;
