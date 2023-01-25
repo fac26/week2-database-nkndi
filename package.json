@@ -13,8 +13,8 @@
   "scripts": {
     "test": "node ./tests/1.test.js",
     "start": "node src/index.js",
-    "dev": "SET DB_FILE=db.sqlite & nodemon src/index.js",
-    "seed": "SET DB_FILE=db.sqlite & node ./database/seed.js"
+    "dev": "DB_FILE=db.sqlite nodemon src/index.js",
+    "seed": "DB_FILE=db.sqlite node ./database/seed.js"
   },
   "dependencies": {
     "better-sqlite3": "^8.0.1",
