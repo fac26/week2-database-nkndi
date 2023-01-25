@@ -18,7 +18,6 @@ function addbookform(genres, errors={}) {
     ${validate(errors.name)}</p>
     <p><label for="author">Author name:</label>
     <input name="author" id="author">
-    ${validate(errors.author)}</p>
     <p><label for="year">Year of release:</label>
     <input name="year" id="year">
     ${validate(errors.year)}</p>

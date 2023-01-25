@@ -1,7 +1,6 @@
 const { htmlTemplate } = require('../templates/html');
 const forms = require('../templates/forms');
 
-//const {addBookToBD}= require('../model/insertBook');
 const genres = require('../model/genres');
 const {inserteAuthorToDB, getAuthorId}=require('../model/authors');
 const { addBookToDB } = require('../model/insertBook');
@@ -29,6 +28,9 @@ function handleAddBook(request, response){
 	if(Object.keys(errors).length>0){
 ///????
 	} else {
+		name=sanitize(name);
+		author=sanitize(author);
+		year=sanitize(year);
 		let author_id;
 		const authorIdFromDB = getAuthorId(author);//back from db {id, name}
 
@@ -45,11 +47,15 @@ function handleAddBook(request, response){
 		console.log(new_book);
 		console.log(author_id, 'id, received name from form: ', author);
 		addBookToDB(new_book);
-		response.redirect('/');
+	response.redirect('/');
 	}
 	
 }
 
+function sanitize(input){
+	return input.replace(/</g, '&lt;');
+
+}
 module.exports = { addBook, handleAddBook };
 
 
