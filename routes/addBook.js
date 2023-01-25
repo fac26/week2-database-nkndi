@@ -1,14 +1,14 @@
-const {htmlTemplate} = require('../templates/html');
+const { htmlTemplate } = require('../templates/html');
 const forms = require('../templates/forms');
+
 //const {addBookToBD}= require('../model/insertBook');
 const genres = require('../model/genres');
 const {inserteAuthorToDB, getAuthorId}=require('../model/authors');
-
+const { addBookToDB } = require('../model/insertBook');
 
 
 function addBook(request, response) {
-
-	const body = htmlTemplate('Add book', forms.addbookform(genres.listGenres()), 'All books', '/')
+	const body = htmlTemplate('Add book', forms.addbookform(genres.listGenres()), 'All books', '/');
 	response.send(body);
 }
 
@@ -27,7 +27,7 @@ function handleAddBook(request, response){
 		author = 'Unknown';
 	}
 	if(Object.keys(errors).length>0){
-
+///????
 	} else {
 		let author_id;
 		const authorIdFromDB = getAuthorId(author);//back from db {id, name}
@@ -43,8 +43,8 @@ function handleAddBook(request, response){
 
 		console.log('genre name', genre_name)
 		console.log(new_book);
-		console.log(author_id);
-		//addBookToBD(new_book);
+		console.log(author_id, 'id, received name from form: ', author);
+		addBookToDB(new_book);
 		response.redirect('/');
 	}
 	
@@ -52,7 +52,4 @@ function handleAddBook(request, response){
 
 module.exports = { addBook, handleAddBook };
 
-//has addbook function using name, author name, year of issue, genre
-//addbook function will import forms from templates/forms.js
 
-//validate

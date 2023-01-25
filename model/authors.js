@@ -14,7 +14,7 @@ function inserteAuthorToDB(author) {
 
 const select_Author = db.prepare(/*sql*/
 `SELECT
-id, name FROM genres WHERE name LIKE ? `
+id, name FROM authors WHERE name LIKE ? `
 )
 
 function getAuthorId(name){
