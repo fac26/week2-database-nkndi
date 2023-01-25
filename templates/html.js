@@ -1,4 +1,4 @@
-function html(title, content, linkname, linkpath) {
+function htmlTemplate(title, content, linkname, linkpath) {
   const body = /*html*/ `
         
     <!DOCTYPE html>
@@ -21,4 +21,4 @@ function html(title, content, linkname, linkpath) {
   return body;
 }
 
-module.export = { html };
+module.exports = { htmlTemplate };
