@@ -1,8 +1,11 @@
-
-function addbookform(genres, errors={}) {
-    const options = genres.map((gen) => `<option value="${gen.id}">
-    ${gen.name}</option>`); 
-    const formhtml = `<h1>Add a book</h1>
+function addbookform(genres, errors = {}) {
+  const options = genres.map(
+    (gen) => `<option value="${gen.id}">
+    ${gen.name}</option>`
+  );
+  const formhtml = `
+    <link rel="stylesheet" href="/style.css">
+    <center><h1>Add a book</h1></center><br>
     <form method="POST">
     <p><label for="name">Book name:</label>
     <input name="name" id="name">
@@ -12,18 +15,19 @@ function addbookform(genres, errors={}) {
     <p><label for="year">Year of release:</label>
     <input name="year" id="year">
     ${validate(errors.year)}</p>
-    <p><label>Genre:</label>
-    <select name="genres_id">${options.join(" ")}</select></p>
+    <p><label>Genre:</label> <br>
+    <center><select name="genres_id">${options.join(" ")}</select></p></center>
+    <br>
     <button>Add &plus;</button>
     </form>
     `;
-    return formhtml; 
+  return formhtml;
 }
 
 function sortform(sort_options) {
-  let options='';
-  for(const key in sort_options){
-    options+=`<option value="${key}">${sort_options[key]}</option>`
+  let options = "";
+  for (const key in sort_options) {
+    options += `<option value="${key}">${sort_options[key]}</option>`;
   }
   const formhtml = `
   <form method="POST">
@@ -32,15 +36,14 @@ function sortform(sort_options) {
   <button>Sort</button>
   </form>
   `;
-  return formhtml; 
+  return formhtml;
 }
 function validate(message) {
-    if (message) {
-      return `<span style="color: red">${message}</span>`;
-    } else {
-      return "";
-    }
+  if (message) {
+    return `<span style="color: red">${message}</span>`;
+  } else {
+    return "";
   }
+}
 
-
-module.exports = { addbookform, sortform}
+module.exports = { addbookform, sortform };

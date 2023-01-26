@@ -1,4 +1,4 @@
-const db = require('../database/database');
+const db = require("../database/database");
 
 const insert_author = db.prepare(`
   INSERT INTO authors (name)
@@ -9,16 +9,17 @@ const insert_author = db.prepare(`
 `);
 
 function inserteAuthorToDB(author) {
-    return insert_author.get(author);
+  return insert_author.get(author);
 }
 
-const select_Author = db.prepare(/*sql*/
-`SELECT
+const select_Author = db.prepare(
+  /*sql*/
+  `SELECT
 id, name FROM authors WHERE name LIKE ? `
-)
+);
 
-function getAuthorId(name){
-    return select_Author.get(name)
+function getAuthorId(name) {
+  return select_Author.get(name);
 }
 
-module.exports = {inserteAuthorToDB, getAuthorId};
+module.exports = { inserteAuthorToDB, getAuthorId };

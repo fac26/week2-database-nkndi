@@ -16,7 +16,7 @@ function addBookToDB(book) {
   return insert_book.get(book);
 }
 
-module.exports = {addBookToDB}
+module.exports = { addBookToDB };
 
 //we are handling the form input (bname, aname, yor, genre) to be placed into the DB
-//using insert in SQL 
+//using insert in SQL

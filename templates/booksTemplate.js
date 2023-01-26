@@ -1,8 +1,7 @@
 // table that appears from search results
-
 function booksTemplate(books) {
   const booksUL = /*html*/ `
-    <ul>${books.map(book=>bookTemplate(book)).join("")}</ul>
+    <ul>${books.map((book) => bookTemplate(book)).join("")}</ul>
     `;
   return booksUL;
 }
