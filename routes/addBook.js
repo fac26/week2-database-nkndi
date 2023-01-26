@@ -22,7 +22,7 @@ function handleAddBook(request, response) {
   if (!name) {
     errors.name = "Please enter a title";
   }
-  if (!year) {
+  if (!year || isNaN(Number(year))) {
     errors.year = "Please enter a year of release";
   }
 
