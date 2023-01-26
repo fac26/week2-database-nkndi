@@ -77,7 +77,6 @@ genres DB:
 | 4  | Drama            |                   
 | 5  | Politics         | 
 
-
 books DB:
 
 | id | name                         | author_id     | year   | genres_id |
@@ -89,7 +88,26 @@ books DB:
 | 5  | 2001: A Space Oddysey        | 3             | 1968   | 3         |
 | 6  | Rendezvous With Rama         | 3             | 1973   | 3         |
 | 7  | 1984                         | 4             | 1948   | 4         |
-|  8 | Homage to Catalonia          | 4             | 1938   | 5         |           
+| 8  | Homage to Catalonia          | 4             | 1938   | 5         |           
+
+authors DB:
+
+| id | name             | 
+|:--:|:---------:       |                                                                            
+| 1  | J.R.R. Tolkien   | 
+| 2  | Stephen King     |  
+| 3  | Arthur C. Clarke |                            
+| 4  | George Orwell    |                   
+| 5  | Unknown          | 
+
+
+sqlite_sequence DB:
+
+| name     | seq        | 
+|:--:      |:---------: |                                                                            
+| authors  | 5          | 
+| genres   | 5          |  
+| books    | 8          |    
 
 ---
 
