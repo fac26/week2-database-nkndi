@@ -1,5 +1,4 @@
-
-const db = require('../database/database.js')
+const db = require("../database/database.js");
 
 const select_all_books = db.prepare(/*sql*/ `
     SELECT 
@@ -13,8 +12,8 @@ const select_all_books = db.prepare(/*sql*/ `
     JOIN authors ON books.author_id = authors.id
 `);
 
-function listBooks(){
-    return select_all_books.all()
+function listBooks() {
+  return select_all_books.all();
 }
 
 const sort_by_title_books = db.prepare(/*sql*/ `
@@ -30,8 +29,8 @@ const sort_by_title_books = db.prepare(/*sql*/ `
     ORDER BY books.name ASC
 `);
 
-function sortBooksByTitle(){
-    return sort_by_title_books.all()
+function sortBooksByTitle() {
+  return sort_by_title_books.all();
 }
 
 const sort_by_year_books = db.prepare(/*sql*/ `
@@ -48,7 +47,7 @@ const sort_by_year_books = db.prepare(/*sql*/ `
 `);
 
 function sortBooksByYear() {
-    return sort_by_year_books.all();
+  return sort_by_year_books.all();
 }
 
 module.exports = { listBooks, sortBooksByTitle, sortBooksByYear };

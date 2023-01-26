@@ -12,4 +12,4 @@ function searchBooks(search_book) {
   return search_books.all("%" + search_book + "%");
 }
 
-module.exports = {searchBooks}
+module.exports = { searchBooks };

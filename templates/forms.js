@@ -1,8 +1,9 @@
-
-function addbookform(genres, errors={}) {
-    const options = genres.map((gen) => `<option value="${gen.id}">
-    ${gen.name}</option>`); 
-    const formhtml = `
+function addbookform(genres, errors = {}) {
+  const options = genres.map(
+    (gen) => `<option value="${gen.id}">
+    ${gen.name}</option>`
+  );
+  const formhtml = `
     <link rel="stylesheet" href="/style.css">
     <center><h1>Add a book</h1></center><br>
     <form method="POST">
@@ -20,13 +21,13 @@ function addbookform(genres, errors={}) {
     <button>Add &plus;</button>
     </form>
     `;
-    return formhtml; 
+  return formhtml;
 }
 
 function sortform(sort_options) {
-  let options='';
-  for(const key in sort_options){
-    options+=`<option value="${key}">${sort_options[key]}</option>`
+  let options = "";
+  for (const key in sort_options) {
+    options += `<option value="${key}">${sort_options[key]}</option>`;
   }
   const formhtml = `
   <form method="POST">
@@ -35,15 +36,14 @@ function sortform(sort_options) {
   <button>Sort</button>
   </form>
   `;
-  return formhtml; 
+  return formhtml;
 }
 function validate(message) {
-    if (message) {
-      return `<span style="color: red">${message}</span>`;
-    } else {
-      return "";
-    }
+  if (message) {
+    return `<span style="color: red">${message}</span>`;
+  } else {
+    return "";
   }
+}
 
-
-module.exports = { addbookform, sortform}
+module.exports = { addbookform, sortform };
