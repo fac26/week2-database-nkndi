@@ -66,16 +66,20 @@ COMMIT
   
 </details>
 
+---
+
 | id | name                         | author_id     | year   | genres_id |
-| ---|---------                     |:-------------:|                                                                              | -----:                |
+| ---|---------                     |:-------------:|                                                                              
 | 1  | The Lord of the Rings        | 1             | 1955   | 1         |
-| 2  | The Hobbit                   | 1             | 1937   | 1         | DOM Variable          |
-| 3  | It                           | 2             | 1986   | 2                                          | DOM Variable          |
-| 4  | The Stand                    | 2             | 1978   | 2                                | Variable              |
-| 5  | 2001: A Space Oddysey        | 3             | 1968   | 3                     | Variable              |
-| 6  | Rendezvous With Rama         | 3             | 1973   | 3                | Variable              |
-| 7  | 1984                         | 4             | 1948   | 4                                 | Variable              |
-|  8 | Homage to Catalonia          | 4             | 1938   | 5                    | Variable              |
+| 2  | The Hobbit                   | 1             | 1937   | 1         |
+| 3  | It                           | 2             | 1986   | 2         |                              
+| 4  | The Stand                    | 2             | 1978   | 2         |                   
+| 5  | 2001: A Space Oddysey        | 3             | 1968   | 3         |
+| 6  | Rendezvous With Rama         | 3             | 1973   | 3         |
+| 7  | 1984                         | 4             | 1948   | 4         |
+|  8 | Homage to Catalonia          | 4             | 1938   | 5         |           
+
+---
 
 ## Acceptance Criteria
 
