@@ -19,5 +19,4 @@ id, name FROM genres WHERE id LIKE ? `
 function getGenre(genre_id) {
   return select_Genre.get(genre_id);
 }
-console.log(listGenres());
 module.exports = { listGenres, getGenre };
