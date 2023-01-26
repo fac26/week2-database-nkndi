@@ -16,7 +16,7 @@ function addbookform(genres, errors = {}) {
     <input type="text" name="year" id="year" maxlength="4">
     ${validate(errors.year)}</p>
     <p><label>Genre:</label> <br>
-    <center><select name="genres_id">${options.join(" ")}</select></p></center>
+    <center><select class="genres" name="genres_id">${options.join(" ")}</select></p></center>
     <br>
     <button>Add &plus;</button>
     </form>
@@ -31,9 +31,9 @@ function sortform(sort_options) {
   }
   const formhtml = `
   <form method="POST">
-  <p><label>Sort by:</label>
-  <select name="sort_by">${options}</select></p>
-  <button>Sort</button>
+  <p><label class="sort-label">Sort by:</label>
+  <select class="sort" name="sort_by">${options}</select></p>
+  <button class="btn-sort">Sort</button>
   </form>
   `;
   return formhtml;
