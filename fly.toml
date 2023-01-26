@@ -1,12 +1,9 @@
-# fly.toml file generated for week2-database-nkndi on 2023-01-24T12:19:48Z
+# fly.toml file generated for week2-database-nkndi on 2023-01-25T16:26:37Z
 
 app = "week2-database-nkndi"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
-
-[build]
-  builder = "heroku/buildpacks:20"
 
 [env]
   PORT = "8080"
@@ -15,8 +12,8 @@ processes = []
   auto_rollback = true
 
 [mounts]
-  source = "data"
-  destination = "/data"
+   source = "data"
+   destination = "/data"
 
 [[services]]
   http_checks = []
