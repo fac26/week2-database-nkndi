@@ -1,7 +1,6 @@
 const { htmlTemplate } = require('../templates/html');
 const forms = require('../templates/forms');
 
-//const {addBookToBD}= require('../model/insertBook');
 const genres = require('../model/genres');
 const {inserteAuthorToDB, getAuthorId}=require('../model/authors');
 const { addBookToDB } = require('../model/insertBook');
@@ -27,29 +26,28 @@ function handleAddBook(request, response){
 		author = 'Unknown';
 	}
 	if(Object.keys(errors).length>0){
-///????
+		const body = htmlTemplate('Add book', forms.addbookform(genres.listGenres(), errors), 'All books', '/');
+	 	response.send(body);
 	} else {
-		let author_id;
-		const authorIdFromDB = getAuthorId(author);//back from db {id, name}
+		name=sanitize(name);
+		author=sanitize(author);
+		year=sanitize(year);
+		let author_id=getAuthorId(author)?.id || inserteAuthorToDB({name: author}).id;
+		
 
-		if(!authorIdFromDB){
-			author_id = inserteAuthorToDB({name: author}).id;
-		} else {
-			author_id=authorIdFromDB.id;
-		}		
-
-		const genre_name = genres.getGenre(genres_id);//{id, name}		
+		//const genre_name = genres.getGenre(genres_id);//{id, name}		
 		const new_book = {name, author_id, year, genres_id};
 
-		console.log('genre name', genre_name)
-		console.log(new_book);
-		console.log(author_id, 'id, received name from form: ', author);
 		addBookToDB(new_book);
-		response.redirect('/');
+	response.redirect('/');
 	}
 	
 }
 
+function sanitize(input){
+	return input.replace(/</g, '&lt;');
+
+}
 module.exports = { addBook, handleAddBook };
 
 

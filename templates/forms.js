@@ -1,12 +1,3 @@
-//me and niete
-
-//two functions- one is the form (to add new books in db) 
-//and the other is search to retrieve books like the food example-form to search for author_name
-//sort-button on the search results in form element -need function for that 
-
-//page on discord
-
-//not writing functions here, just templates 
 
 function addbookform(genres, errors={}) {
     const options = genres.map((gen) => `<option value="${gen.id}">
@@ -20,7 +11,6 @@ function addbookform(genres, errors={}) {
     ${validate(errors.name)}</p>
     <p><label for="author">Author name:</label>
     <input name="author" id="author">
-    ${validate(errors.author)}</p>
     <p><label for="year">Year of release:</label>
     <input name="year" id="year">
     ${validate(errors.year)}</p>
@@ -33,6 +23,20 @@ function addbookform(genres, errors={}) {
     return formhtml; 
 }
 
+function sortform(sort_options) {
+  let options='';
+  for(const key in sort_options){
+    options+=`<option value="${key}">${sort_options[key]}</option>`
+  }
+  const formhtml = `
+  <form method="POST">
+  <p><label>Sort by:</label>
+  <select name="sort_by">${options}</select></p>
+  <button>Sort</button>
+  </form>
+  `;
+  return formhtml; 
+}
 function validate(message) {
     if (message) {
       return `<span style="color: red">${message}</span>`;
@@ -42,4 +46,4 @@ function validate(message) {
   }
 
 
-module.exports = { addbookform }
+module.exports = { addbookform, sortform}
