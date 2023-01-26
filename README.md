@@ -67,9 +67,21 @@ COMMIT
 </details>
 
 ---
+genres DB:
+
+| id | name             | 
+|:--:|:---------:       |                                                                            
+| 1  | Fantasy          | 
+| 2  | Horror           |  
+| 3  | Science Fiction  |                            
+| 4  | Drama            |                   
+| 5  | Politics         | 
+
+
+books DB:
 
 | id | name                         | author_id     | year   | genres_id |
-| :--:|:---------:                 |:-------------:|:-------:|:---------:|                                                                              
+|:--:|:---------:                   |:-------------:|:------:|:---------:|                                                                              
 | 1  | The Lord of the Rings        | 1             | 1955   | 1         |
 | 2  | The Hobbit                   | 1             | 1937   | 1         |
 | 3  | It                           | 2             | 1986   | 2         |                              
