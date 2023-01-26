@@ -24,18 +24,20 @@ function sortBooks(request, response) {
 
   let bookList;
   if (sort_by === "default") {
-    booksList = booksTemplate(booksReq.listBooks());
+    bookList = booksTemplate(booksReq.listBooks());
   }
   if (sort_by === "name") {
-    booksList = booksTemplate(booksReq.sortBooksByTitle());
+    bookList = booksTemplate(booksReq.sortBooksByTitle());
   }
   if (sort_by === "year") {
-    booksList = booksTemplate(booksReq.sortBooksByYear());
+    bookList = booksTemplate(booksReq.sortBooksByYear());
   }
-
+  if (sort_by === "author") {
+    bookList = booksTemplate(booksReq.sortBooksAuthor());
+  }
   const body = htmlTemplate(
     "Books",
-    sortForm.concat(booksList),
+    sortForm.concat(bookList),
     "Add book",
     "/add-book"
   );
