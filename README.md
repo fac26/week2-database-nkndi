@@ -12,9 +12,9 @@ Make sure you have Git and Node (v18) installed.
 
 2. Run `npm install` to install all the dependencies
 
-3. Run `npm run dev` to start the server. Run `npm run dev-win` if using Windows.
+3. Run `npm run seed` to create the database. Run `npm run seed-win` if using Windows. 
 
-4. Run `npm run seed` to create the database. Run `npm run seed-win` if using Windows.
+4. Run `npm run dev` to start the server. Run `npm run dev-win` if using Windows. 
 
 This uses the nodemon library to auto-restart the server when you save changes.
 
