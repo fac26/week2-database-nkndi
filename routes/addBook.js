@@ -44,7 +44,6 @@ function handleAddBook(request, response) {
     let author_id =
       getAuthorId(author)?.id || inserteAuthorToDB({ name: author }).id;
 
-    //const genre_name = genres.getGenre(genres_id);//{id, name}
     const new_book = { name, author_id, year, genres_id };
 
     addBookToDB(new_book);
