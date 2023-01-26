@@ -11,7 +11,9 @@
 function addbookform(genres, errors={}) {
     const options = genres.map((gen) => `<option value="${gen.id}">
     ${gen.name}</option>`); 
-    const formhtml = `<h1>Add a book</h1>
+    const formhtml = `
+    <link rel="stylesheet" href="/style.css">
+    <center><h1>Add a book</h1></center><br>
     <form method="POST">
     <p><label for="name">Book name:</label>
     <input name="name" id="name">
@@ -22,8 +24,9 @@ function addbookform(genres, errors={}) {
     <p><label for="year">Year of release:</label>
     <input name="year" id="year">
     ${validate(errors.year)}</p>
-    <p><label>Genre:</label>
-    <select name="genres_id">${options.join(" ")}</select></p>
+    <p><label>Genre:</label> <br>
+    <center><select name="genres_id">${options.join(" ")}</select></p></center>
+    <br>
     <button>Add &plus;</button>
     </form>
     `;
