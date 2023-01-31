@@ -1,6 +1,6 @@
 # week2-database-nkndi
 
-# Dominic-Karol-Natalia-Niete-database
+# Dominic-Karol-Natalia-Niete-Iman-database
 
 A library app where you can add in your favourite books as recommendations for others.
 
