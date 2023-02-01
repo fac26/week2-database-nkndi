@@ -11,8 +11,6 @@ CREATE TABLE IF NOT EXISTS books (
   author_id INTEGER REFERENCES authors(id),
   year INTEGER, 
   genres_id INTEGER REFERENCES genres(id)
-  CHECK (year >=(1600))
-
 );
 
 CREATE TABLE IF NOT EXISTS authors (
